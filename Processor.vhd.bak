@@ -1,0 +1,8 @@
+LIBRARY ieee;
+use ieee.std_logic_1164.all;
+
+Entity REG8 IS
+	PORT (D: IN STD_LOGI)C_VECTOR (7 DOWNTO 0);
+			EN: STD_LOGIC ;
+			Q: OUT STD_LOGIC_VECTOR (7 DOWNTO 0));
+END REG8;

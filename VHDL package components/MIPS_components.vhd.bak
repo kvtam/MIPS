@@ -1,0 +1,46 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+PACKAGE MIPS_components IS
+--DECODER
+		component DCD3x8	--3 to 8 decoder
+				PORT (D: IN STD_LOGIC_VECTOR (2 DOWNTO 0);
+					   Q: OUT STD_LOGIC_VECTOR (7 DOWNTO 0));
+			end component;
+--MULTIPLEXORS
+			component MUX4x4 -- 4-bit 4-to-1 mux
+				PORT (D0,D1,D2,D3: IN STD_LOGIC_VECTOR (3 DOWNTO 0);
+						s:	IN STD_LOGIC_VECTOR (1 DOWNTO 0);
+						Q: OUT STD_LOGIC_VECTOR (3 DOWNTO 0));
+			end component;
+			component MUX8x16 -- 16-bit 8-to-1 mux
+				PORT (D0,D1,D2,D3,D4,D5,D6,D7: IN STD_LOGIC_VECTOR (15 DOWNTO 0);
+						s:	IN STD_LOGIC_VECTOR (2 DOWNTO 0);
+						Q: OUT STD_LOGIC_VECTOR (15 DOWNTO 0));
+			end component;
+--REGISTERS
+			component REG8	 -- 8-bit register
+				PORT (D: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+						EN:IN STD_LOGIC ;
+						CLR: IN STD_LOGIC;
+						CLK: IN STD_LOGIC;
+						Q: OUT STD_LOGIC_VECTOR (7 DOWNTO 0));
+			end component;
+			component REG16 -- 16-bit register
+				PORT (D: IN STD_LOGIC_VECTOR (15 DOWNTO 0);
+						EN:  IN STD_LOGIC ;
+						CLR: IN STD_LOGIC;
+						CLK: IN STD_LOGIC;
+						Q: OUT STD_LOGIC_VECTOR (15 DOWNTO 0));
+			end component;
+			component REG8x16 -- 16-bit register file with 8 registers
+				PORT (ADD_R1,ADD_R2,ADD_W: IN STD_LOGIC_VECTOR (2 DOWNTO 0);
+						WE,CLK: IN STD_LOGIC;
+						DIN: IN STD_LOGIC_VECTOR (15 DOWNTO 0);
+						DOUT1, DOUT2: OUT STD_LOGIC_VECTOR (15 DOWNTO 0));
+			end component;
+
+	
+		
+		
+	end MIPS_components;

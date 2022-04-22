@@ -1,0 +1,19 @@
+LIBRARY ieee;
+use ieee.std_logic_1164.all;
+use work.MIPS_components.all;
+
+--Program counter
+Entity CONTROL IS
+	PORT (INST: IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+			REGDST, BRANCH,MEMREAD,MEMTOREG,MEMWRITE,ALUSRC,REGWRITE: OUT STD_LOGIC;
+			ALUOP: OUT STD_LOGIC_VECTOR(2 DOWNTO 0));
+END CONTROL;
+
+ARCHITECTURE Behavior of CONTROL IS
+	
+	BEGIN 
+		
+	
+		
+END Behavior;
+				
